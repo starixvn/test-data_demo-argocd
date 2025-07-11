@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: l1-namespace-imagepullsecrets-local
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    app: l1-namespace-imagepullsecrets
+spec:
+  destination:
+    namespace: l1
+    name: k8s-starix-local
+  project: rocketor-lumi
+  source:
+    path: charts/_shared/namespace-imagepullsecrets/l1
+    repoURL: https://git3.nexdev.net/test-data/demo-argocd.git
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values-local.yaml

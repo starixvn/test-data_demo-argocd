@@ -83,10 +83,10 @@ k8sdeployments:
     # targetMemoryUtilizationPercentage: 80
 
   nodeSelector:
-    luminet-app: "yes"
+    web: "yes"
 
   tolerations:
-    - key: luminet-app
+    - key: web
       operator: "Equal"
       value: "yes"
       effect: "NoSchedule"

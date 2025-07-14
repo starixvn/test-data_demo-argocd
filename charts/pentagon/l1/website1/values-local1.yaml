@@ -51,15 +51,6 @@ k8sdeployments:
     targetPort: 5000
   #  nodePort:
 
-  ingress:
-    enabled: true
-    stickySessions: false
-    className: haproxy
-    hosts:
-      - host: t2.lumigame.com
-        paths:
-          - path: /local
-            pathType: Prefix
 
 
 
